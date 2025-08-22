@@ -12,7 +12,6 @@ function fetchData(endpoint, callback) {
     .then((res) => callback(res))
     .catch((err) => console.log(err));
 }
-
 fetchData("/products", createFood);
 
 function createFood(data) {
