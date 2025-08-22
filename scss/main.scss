@@ -64,10 +64,10 @@ img {
     border: 1px solid #ddd;
     &__image {
       overflow: hidden;
-      &:hover a{
+      &:hover a {
         transform: scale(1.05);
       }
-      a{
+      a {
         width: 100%;
         transition: 0.3s;
       }
@@ -110,6 +110,43 @@ img {
   }
 }
 
+.comments {
+  padding: 60px 0;
+  &-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  &-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background: #ffffff;
+    &__body {
+      h3 {
+        color: #ff0000;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+      strong {
+        color: #ff0000;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+  }
+  @media (max-width: 990px) {
+    &-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    &-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
 .category {
   &-wrapper {
     display: flex;
@@ -127,7 +164,6 @@ img {
     }
   }
 }
-
 
 .loading {
   display: flex;

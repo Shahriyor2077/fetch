@@ -1,17 +1,37 @@
-fetch("https://dummyjson.com/posts")
-  .then(response => response.json())
-  .then(data => {
-    const foodWrapper = document.querySelector(".food-wrapper");
-    
-    data.posts.forEach(post => {
-      const foodCard = document.createElement("div");
-      foodCard.className = "food-card";
-      foodCard.innerHTML = `
-        <h3>${post.title}</h3>
-        <p>${post.body}</p>
-        <small>User ID: ${post.userId}</small>
-      `;
-      foodWrapper.appendChild(foodCard);
-    });
-  })
-  .catch(error => console.log("Xatolik:", error)); 
+const foodWrapperEl = document.querySelector(".food-wrapper");
+
+function fetchData(endpoint, callback) {
+  const promise = fetch(`https://dummyjson.com${endpoint}`);
+  promise
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("something went wrong");
+      }
+      return response.json();
+    })
+    .then((res) => callback(res))
+    .catch((err) => console.log(err));
+}
+
+fetchData("/products", createFood);
+
+function createFood(data) {
+  console.log(data);
+
+  data?.products?.forEach((item) => {
+    const cardEl = document.createElement("div");
+    cardEl.className = "food-card";
+
+    cardEl.innerHTML = `
+      <div class="food-card__image">
+        <img loading="lazy" src="${item.thumbnail}" alt="${item.title}">
+      </div>
+      <div class="food-card__body">
+        <h3>${item.title}</h3>
+        <strong>$${item.price}</strong>
+      </div>
+    `;
+
+    foodWrapperEl.appendChild(cardEl);
+  });
+}
