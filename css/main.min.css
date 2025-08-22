@@ -1,1 +1,231 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}.container{max-width:1280px;width:100%;margin-left:auto;margin-right:auto}img{max-width:100%;min-height:100%}.product{padding:60px 0}.product-wrapper{display:grid;grid-template-columns:repeat(4, 1fr);gap:12px}.product-card{border:1px solid #ddd}.product-card__image{overflow:hidden}.product-card__image:hover img{transform:scale(1.05)}.product-card__image img{width:100%;transition:.3s}.product-card__body{padding:12px}.product-card__body h3{color:red}@media(max-width: 990px){.product-wrapper{grid-template-columns:repeat(3, 1fr)}}@media(max-width: 600px){.product-wrapper{grid-template-columns:repeat(2, 1fr)}}.food{padding:60px 0}.food-wrapper{display:grid;grid-template-columns:repeat(4, 1fr);gap:12px}.food-card{border:1px solid #ddd}.food-card__image{overflow:hidden}.food-card__image:hover img{transform:scale(1.05)}.food-card__image img{width:100%;transition:.3s}.food-card__body{padding:12px}.food-card__body h3{color:red}.food-skeleton{display:grid;grid-template-columns:repeat(4, 1fr);gap:12px}.food-skeleton__image{width:100%;height:280px;background:#ddd}.food-skeleton__line{width:80%;height:30px;background:#ddd;margin-top:12px}.food-skeleton__line:nth-child(3){width:60%}@media(max-width: 990px){.food-wrapper{grid-template-columns:repeat(3, 1fr)}}@media(max-width: 600px){.food-wrapper{grid-template-columns:repeat(2, 1fr)}}.category-wrapper{display:flex;list-style:none;gap:20px;overflow:auto}.category-wrapper li{text-wrap:nowrap;background:#ddd;padding:6px 16px;border-radius:6px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none}.loading{display:flex;justify-content:center}.loader{width:50px;aspect-ratio:1;border-radius:50%;border:8px solid;border-color:#000 rgba(0,0,0,0);animation:l1 1s infinite}@keyframes l1{to{transform:rotate(0.5turn)}}/*# sourceMappingURL=main.min.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: #007bff;
+  color: white;
+  padding: 20px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+section {
+  padding: 40px 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: red;
+  font-size: 28px;
+}
+
+/* Bosh sahifa */
+.welcome {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.welcome h1 {
+  font-size: 36px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Foydalanuvchilar */
+.users-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.user-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: white;
+}
+
+.user-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.user-card h3 {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.user-card p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Mahsulotlar */
+.products-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  padding: 15px;
+  color: red;
+  margin: 0;
+}
+
+.product-card p {
+  padding: 0 15px 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.product-card strong {
+  display: block;
+  padding: 0 15px 15px;
+  color: #28a745;
+  font-size: 18px;
+}
+
+/* Izohlar */
+.comments-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.comment-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+.comment-card p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.comment-card small {
+  color: red;
+  font-size: 14px;
+}
+
+/* Food */
+.food-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.food-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+.food-card h3 {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.food-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.food-card small {
+  color: red;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .users-wrapper,
+  .products-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .comments-wrapper,
+  .food-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .welcome h1 {
+    font-size: 28px;
+  }
+  
+  section h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-wrapper,
+  .products-wrapper,
+  .comments-wrapper,
+  .food-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
